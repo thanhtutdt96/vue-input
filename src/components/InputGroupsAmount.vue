@@ -105,7 +105,7 @@ watch(amountValue, (newValue) => {
   row-gap: 0.25rem;
 }
 
-.input-groups__input-amount {
+.input-groups-input-amount {
   span {
     color: #b4d2ef;
   }

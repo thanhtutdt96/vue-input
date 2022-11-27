@@ -20,7 +20,7 @@ module.exports = {
     parser: "@typescript-eslint/parser",
   },
 
-  plugins: ["@typescript-eslint", "vue", "import"],
+  plugins: ["@typescript-eslint", "vue", "import", "prettier"],
 
   rules: {
     "@typescript-eslint/no-explicit-any": "off",

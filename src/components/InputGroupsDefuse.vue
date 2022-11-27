@@ -104,7 +104,7 @@ watch(defuseValue, (newValue) => {
   }
 }
 
-.input-groups__input-amount {
+.input-groups-input-amount {
   :deep(button) {
     width: 1.5rem;
   }

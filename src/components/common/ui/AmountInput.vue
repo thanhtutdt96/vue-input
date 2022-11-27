@@ -10,18 +10,22 @@ const emit = defineEmits<{ (event: 'update:modelValue', value: number): void }>(
 const debouncedInputChange = debounce((newValue) => {
   emit('update:modelValue', +newValue);
 }, props.debounce);
+
+const handleInputChange = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+
+  if (props.debounce) {
+    debouncedInputChange(target?.value);
+
+    return;
+  }
+
+  emit('update:modelValue', +target?.value);
+};
 </script>
 
 <template>
-  <input
-    type="number"
-    :value="modelValue"
-    @input="
-      props.debounce
-        ? debouncedInputChange($event.target.value)
-        : emit('update:modelValue', +$event.target.value)
-    "
-  />
+  <input type="number" :value="modelValue" @input="handleInputChange" />
 </template>
 
 <style lang="scss" scoped>
